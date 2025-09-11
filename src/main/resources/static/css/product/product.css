@@ -1,0 +1,19 @@
+.filter {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+.filter label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}

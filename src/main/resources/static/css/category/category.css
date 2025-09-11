@@ -1,0 +1,43 @@
+#create-category-modal {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+#create-category-modal .form-group {
+    margin-bottom: 15px;
+}
+
+#create-category-modal input,
+#create-category-modal textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#create-category-modal button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#create-category-modal .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}

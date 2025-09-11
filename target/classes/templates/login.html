@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h2>Авторизация</h2>
+<form id ="loginForm" th:action="@{/login}">
+    <label>Логин:</label>
+    <input type="text" id="username" name="username" required/>
+    <br/>
+    <label>Пвроль:</label>
+    <input type="password" id="password" name="password" required/>
+    <br/>
+    <button type="submit">Войти</button>
+</form>
+<p>Еще нет аккаунта? <a th:href="@{/register}">Создать</a></p>
+
+<script type="module" src="/js/auth/login.js"></script>
+</body>
+</html>

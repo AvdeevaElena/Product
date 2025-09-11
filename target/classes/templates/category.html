@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/category/category.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <title>Категории</title>
+</head>
+<body>
+<div class="page-header">
+    <h1>Категории</h1>
+    <div class="buttons-container">
+        <a th:href="@{/products}" class="btn-link green">
+            <button type="button">Перейти к продуктам</button>
+        </a>
+        <button id="logout-btn" type="button">Выйти</button>
+    </div>
+</div>
+
+<div id="create-category-modal" class="modal">
+    <div class="modal-content">
+        <form id="create-category-form">
+            <div class="form-group">
+                <label for="name">Наименование:</label>
+                <input type="text" id="name" name="categoryName" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Краткое описание:</label>
+                <textarea id="description" name="categoryDescription" required></textarea>
+            </div>
+            <button type="submit">➕ Добавить категорию</button>
+        </form>
+    </div>
+</div>
+
+<table id="categories-table">
+    <thead>
+    <tr>
+        <th id="culumn-with-buttons">Удалить/Редактировать</th>
+        <th>№</th>
+        <th>Id</th>
+        <th>Наименование</th>
+        <th>Краткое описание</th>
+    </tr>
+    </thead>
+    <tbody id="categories-body"></tbody>
+</table>
+
+<script type="module" src="/js/category/category.js" defer></script>
+<script type="module">
+    import { initLogout } from "/js/auth/authStorage.js";
+    initLogout("logout-btn");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/product/product.css">
+    <link rel="stylesheet" href="/css/product/createProduct.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <title>Продукты</title>
+</head>
+<body>
+
+<div class="page-header">
+    <h1>Продукты</h1>
+    <div class="buttons-container">
+        <a th:href="@{/categories}" class="btn-link green">
+            <button>К Категориям</button>
+        </a>
+        <button id="logout-btn" type="button">Выйти</button>
+    </div>
+</div>
+
+<div class="filter">
+    <label>Наименование: <input type="text" id="filterName"></label>
+    <label>Категория:
+        <select id="filterCategory"></select>
+    </label>
+    <label>Цена от: <input type="number" id="filterPriceMin" min="0"></label>
+    <label>до: <input type="number" id="filterPriceMax" min="0"></label>
+    <button id="apply-filters-btn">Фильтровать</button>
+    <button id="clear-filters-btn">Сбросить фильтры</button>
+</div>
+
+<table id="product-table">
+    <thead>
+    <tr>
+        <th> № </th>
+        <th>Id</th>
+        <th>Наименование</th>
+        <th>Описание</th>
+        <th>Цена</th>
+        <th>Изображение</th>
+        <th>Категория</th>
+        <th>Дата добавления</th>
+        <th>Статус</th>
+        <th id="culumn-with-buttons">Удалить</th>
+
+    </tr>
+    </thead>
+    <tbody id="product-body"></tbody>
+</table>
+
+<div id="update-product-buttons-div">
+    <button id="save-products">Сохранить</button>
+    <button id="undo-products">Отменить</button>
+    <button id="add-product-btn">➕ Добавить продукт</button>
+</div>
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <h2>Создание продукта</h2>
+        <form id="createProductForm">
+            <label>Наименование:</label>
+            <input type="text" id="newProductName" required>
+
+            <label>Описание:</label>
+            <input type="text" id="newProductDescription">
+
+            <label>Цена:</label>
+            <input type="number" id="newProductPrice" min="0" required>
+
+            <label>Изображение (URL):</label>
+            <input type="text" id="newProductImageUrl">
+
+            <label>Категория:</label>
+            <select id="newProductCategory"></select>
+
+            <label>Статус:</label>
+            <select id="newProductStatus">
+                <option value="1">активен</option>
+                <option value="0">не активен</option>
+            </select>
+
+            <div class="actions">
+                <button type="button" id="cancelModal">Отмена</button>
+                <button type="submit">Создать</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="module" src="/js/product/product.js" defer></script>
+<script type="module">
+    import { initLogout } from "/js/auth/authStorage.js";
+    initLogout("logout-btn");
+</script>
+
+
+</body>
+</html>
